@@ -151,6 +151,11 @@ pub struct Element {
 }
 
 impl Element {
+    /// Public accessor for the DOM node id.
+    pub fn node_id(&self) -> u64 {
+        self.node_id
+    }
+
     /// Get text content of this element.
     pub fn text(&self) -> String {
         let page = unsafe { &mut *(self.page as *mut Page) };
